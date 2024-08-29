@@ -11,10 +11,10 @@
 	export let item;
 </script>
 
-<div class=" w-64 h-64 outline outline-1 outline-red-400">
+<button class=" w-64 h-64 outline outline-1 outline-red-400">
 	<img src={item.image} alt={item.name} class="w-full h-full object-cover" />
     <div class="flex items-center justify-center flex-col">
         <p class="text-2xl">{item.name}</p>
 		<p class="text-2xl">£{item.price}</p>
     </div>
-</div>
+</button>
