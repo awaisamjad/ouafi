@@ -11,7 +11,7 @@
 	export let item;
 </script>
 
-<button class=" w-64 h-64 outline outline-1 outline-red-400">
+<button class=" w-64 h-64 outline outline-1 outline-red-400" on:click={() => console.log(10)}>
 	<img src={item.image} alt={item.name} class="w-full h-full object-cover" />
     <div class="flex items-center justify-center flex-col">
         <p class="text-2xl">{item.name}</p>
