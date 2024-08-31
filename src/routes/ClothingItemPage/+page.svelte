@@ -8,7 +8,7 @@
 
 <main class="grid grid-cols-2 outline">
 	<div class="ml-32 mt-32">
-		<ClothingItem item={{ image: 'shirt.jpg', name: '', price: '' }} />
+		<!-- <ClothingItem item={{ image: 'shirt.jpg', name: '', price: '' }} /> -->
 	</div>
 	<div class = "mt-24">
 		<p>Price</p>
