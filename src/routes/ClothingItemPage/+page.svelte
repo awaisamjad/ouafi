@@ -1,5 +1,5 @@
 <script>
-	import ClothingItem from '$lib/components/ClothingItem.svelte';
+	import ClothingItem from '../../lib/components/ClothingItem.svelte';
 	/**
 	 * @property {string} - the size of the clothing item
 	 */

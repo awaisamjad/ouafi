@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import ClothingItem from '$lib/components/ClothingItem.svelte';
+	import ClothingItem from '../lib/components/ClothingItem.svelte';
 
 
 	
