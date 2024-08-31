@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	/**
 	 * Represents an item with an image, name, and price.
 	 * @typedef {Object} Item

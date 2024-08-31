@@ -1,4 +1,3 @@
-<!-- Button.svelte -->
 <script>
 	export let name;
 	export let onClick;

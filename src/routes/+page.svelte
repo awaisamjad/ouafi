@@ -2,24 +2,35 @@
 	import { goto } from '$app/navigation';
 	import ClothingItem from '$lib/components/ClothingItem.svelte';
 
-	// import { goto } from "svelte-spa-router";
+	let ClothingItems = [
+		{
+			image : "shirt.jpg",
+			name: "Shirt",
+			price : 320
+		},
+		{
+			image : "shirt.jpg",
+			name: "Shirt",
+			price : 320
+		},
+		{
+			image : "shirt.jpg",
+			name: "Shirt",
+			price : 320
+		},
+		{
+			image : "shirt.jpg",
+			name: "Shirt",
+			price : 320
+		},
+	]
 
-	// Array of button names
-	let buttons = ['Button1', 'Button2', 'Button3'];
-
-	// Function to handle button click
-	function handleButtonClick(name: string) {
-		// Navigate to the new page using the dynamic route
-		goto(`/page/${name}`);
-	}
+	
 </script>
 
 <div class="flex flex-row">
-	{#each buttons as button, index}
-		<ClothingItem item={{ image: 'shirt.jpg', name: 'Shirt', price: '230' }} />
-		<button on:click={() => handleButtonClick(button)}>
-			{button}
-		</button>
+	{#each ClothingItems as item}
+		<ClothingItem item={{ image: item.image, name: item.name, price: item.price }} />
 	{/each}
 </div>
 
