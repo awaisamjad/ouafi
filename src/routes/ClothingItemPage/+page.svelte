@@ -1,5 +1,5 @@
 <script>
-	import ClothingItem from '$lib/components/ClothingItem.svelte';
+	import ClothingItem from '../../lib/components/ClothingItem.svelte';
 	/**
 	 * @property {string} - the size of the clothing item
 	 */
@@ -8,7 +8,7 @@
 
 <main class="grid grid-cols-2 outline">
 	<div class="ml-32 mt-32">
-		<ClothingItem item={{ image: 'shirt.jpg', name: '', price: '' }} />
+		<!-- <ClothingItem item={{ image: 'shirt.jpg', name: '', price: '' }} /> -->
 	</div>
 	<div class = "mt-24">
 		<p>Price</p>
