@@ -31,13 +31,17 @@
 
 {#each ClothingItemData as clothing_item_page}
     <button
-        class="w-64 h-64 outline outline-1 outline-red-400"
-        on:click={() => navigateTo(clothing_item_page.name)}
+        class="w-64 h-80 rounded-md bg-slate-200 p-4 m-5 
+        hover:bg-slate-300 hover:h-96"
+        on:click={() => navigateTo(clothing_item_page.name)
+        }
     >
-        <img src={clothing_item_page.image} alt={clothing_item_page.name} class="w-full h-full object-cover" />
+    <div class="">
+        <img src={clothing_item_page.image} alt={clothing_item_page.name} class="flex items-center justify-center" />
         <div class="flex items-center justify-center flex-col">
-            <p class="text-2xl">{clothing_item_page.name}</p>
-            <p class="text-2xl">£{clothing_item_page.price}</p>
+            <p class="text-lg font-semibold m-1">{clothing_item_page.name}</p>
+            <p class="text-m">£{clothing_item_page.price}</p>
         </div>
+    </div>
     </button>
 {/each}
