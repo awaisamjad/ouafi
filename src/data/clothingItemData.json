@@ -1,0 +1,38 @@
+[
+	{
+		"id" : 1,
+		"name" : "T-shirt",
+		"category" : "shirt",
+		"size" : "small",
+		"price" : 20,
+		"gender" : "male",
+		"image" : "shirt.jpg"
+	},
+	{
+		"id" : 2,
+		"name" : "Shirt",
+		"category" : "shirt",
+		"size" : "small",
+		"price" : 20,
+		"gender" : "male",
+		"image" : "shirt.jpg"
+	},
+	{
+		"id" : 3,
+		"name" : "Big shirt",
+		"category" : "shirt",
+		"size" : "small",
+		"price" : 20,
+		"gender" : "male",
+		"image" : "shirt.jpg"
+	},
+	{
+		"id" : 4,
+		"name" : "Full Sleeve Shirt",
+		"category" : "shirt",
+		"size" : "small",
+		"price" : 20,
+		"gender" : "male",
+		"image" : "shirt.jpg"
+	}
+]

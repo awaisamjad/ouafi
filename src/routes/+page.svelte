@@ -1,26 +1,30 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import ClothingItem from '../lib/components/ClothingItem.svelte';
-	import ClothingItem2 from '../lib/components/ClothingItem2.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { onMount } from 'svelte';
-	let ClothingItemData: any[] = [];
-	onMount(async () => {
-		try {
-			const response = await fetch('/clothingItemData.json');
-			if (response.ok) {
-				ClothingItemData = await response.json();
-				console.log(ClothingItemData)
-			} else {
-				console.error('Failed to fetch clothing items:', response.statusText);
-			}
-		} catch (error) {
-			console.error('Error fetching clothing items:', error);
+	import ClothingItemData from '../data/clothingItemData.json';
+
+	let clothingItemId = 1;
+	let foundClothingItem = null;
+	export function getClothingItemByID(id: number) {
+		const foundItem = ClothingItemData.find(item => item.id === id);
+		if (foundItem) {
+			return foundItem;
+		} else {
+			console.log("Could not find Clothing Item. Check id value.");
+			return null;
 		}
-	});
+	}
+	let item = getClothingItemByID(8);
+	console.log(item);
+	// $: {
+	// 	let clothingItem = getClothingItemByID(3);
+	// }
+
 </script>
 
 <div class="flex flex-col items-center">
