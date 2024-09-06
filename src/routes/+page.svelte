@@ -8,23 +8,6 @@
 	import { onMount } from 'svelte';
 	import ClothingItemData from '../data/clothingItemData.json';
 
-	let clothingItemId = 1;
-	let foundClothingItem = null;
-	export function getClothingItemByID(id: number) {
-		const foundItem = ClothingItemData.find(item => item.id === id);
-		if (foundItem) {
-			return foundItem;
-		} else {
-			console.log("Could not find Clothing Item. Check id value.");
-			return null;
-		}
-	}
-	let item = getClothingItemByID(8);
-	console.log(item);
-	// $: {
-	// 	let clothingItem = getClothingItemByID(3);
-	// }
-
 </script>
 
 <div class="flex flex-col items-center">

@@ -1,18 +1,22 @@
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
+import ClothingItemData from '../data/clothingItemData.json';
 
+// @ts-ignore
 export function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
 
 export const flyAndScale = (
+	// @ts-ignore
 	node,
 	params = { y: -8, x: 0, start: 0.95, duration: 150 }
 ) => {
 	const style = getComputedStyle(node);
 	const transform = style.transform === "none" ? "" : style.transform;
 
+	// @ts-ignore
 	const scaleConversion = (valueA, scaleA, scaleB) => {
 		const [minA, maxA] = scaleA;
 		const [minB, maxB] = scaleB;
@@ -23,6 +27,7 @@ export const flyAndScale = (
 		return valueB;
 	};
 
+	// @ts-ignore
 	const styleToString = (style) => {
 		return Object.keys(style).reduce((str, key) => {
 			if (style[key] === undefined) return str;
@@ -33,6 +38,7 @@ export const flyAndScale = (
 	return {
 		duration: params.duration ?? 200,
 		delay: 0,
+		// @ts-ignore
 		css: (t) => {
 			const y = scaleConversion(t, [0, 1], [params.y ?? 5, 0]);
 			const x = scaleConversion(t, [0, 1], [params.x ?? 0, 0]);
@@ -46,3 +52,15 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+
+// @ts-ignore
+export function getClothingItemByID(id) {
+	const foundItem = ClothingItemData.find(item => item.id === id);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log("Could not find Clothing Item. Check id value.");
+		return null;
+	}
+}
