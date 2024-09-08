@@ -6,7 +6,7 @@
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { onMount } from 'svelte';
-	import ClothingItemData from '../data/clothingItemData.json';
+	import ClothingItemData from '../data/ClothingItemData.json';
 
 </script>
 

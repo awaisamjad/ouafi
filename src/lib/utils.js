@@ -1,7 +1,7 @@
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { cubicOut } from "svelte/easing";
-import ClothingItemData from '../data/clothingItemData.json';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { cubicOut } from 'svelte/easing';
+import ClothingItemData from '../data/ClothingItemData.json';
 
 // @ts-ignore
 export function cn(...inputs) {
@@ -14,7 +14,7 @@ export const flyAndScale = (
 	params = { y: -8, x: 0, start: 0.95, duration: 150 }
 ) => {
 	const style = getComputedStyle(node);
-	const transform = style.transform === "none" ? "" : style.transform;
+	const transform = style.transform === 'none' ? '' : style.transform;
 
 	// @ts-ignore
 	const scaleConversion = (valueA, scaleA, scaleB) => {
@@ -32,7 +32,7 @@ export const flyAndScale = (
 		return Object.keys(style).reduce((str, key) => {
 			if (style[key] === undefined) return str;
 			return str + `${key}:${style[key]};`;
-		}, "");
+		}, '');
 	};
 
 	return {
@@ -53,14 +53,101 @@ export const flyAndScale = (
 	};
 };
 
-
 // @ts-ignore
+/**
+ * 
+ * @param {number} id 
+ * @returns 
+ */
 export function getClothingItemByID(id) {
-	const foundItem = ClothingItemData.find(item => item.id === id);
+	const foundItem = ClothingItemData.find((item) => item.id === id);
 	if (foundItem) {
 		return foundItem;
 	} else {
-		console.log("Could not find Clothing Item. Check id value.");
+		console.log('Could not find Clothing Item. Check id value.');
+		return null;
+	}
+}
+
+// @ts-ignore
+/**
+ *
+ * @param {string} name
+ * @returns
+ */
+export function getClothingItemByName(name) {
+	const foundItem = ClothingItemData.find((item) => item.name === name);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log('Could not find Clothing Item. Check id value.');
+		return null;
+	}
+}
+
+// @ts-ignore
+/**
+ *
+ * @param {string} image
+ * @returns
+ */
+export function getClothingItemByImage(image) {
+	const foundItem = ClothingItemData.find((item) => item.image === image);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log('Could not find Clothing Item. Check id value.');
+		return null;
+	}
+}
+
+// @ts-ignore
+/**
+ *
+ * @param {number} price
+ * @returns
+ */
+//TODO Not a `unique` function as multiple can have the same price so it should return them all
+export function getClothingItemsByPrice(price) {
+	const foundItem = ClothingItemData.find((item) => item.price === price);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log('Could not find Clothing Item. Check id value.');
+		return null;
+	}
+}
+
+// @ts-ignore
+/**
+ *
+ * @param {string} gender
+ * @returns
+ */
+//TODO Not a `unique` function as multiple can have the same Gender so it should return them all
+export function getClothingItemsByGender(gender) {
+	const foundItem = ClothingItemData.find((item) => item.gender === gender);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log('Could not find Clothing Item. Check id value.');
+		return null;
+	}
+}
+
+// @ts-ignore
+/**
+ *
+ * @param {string} category
+ * @returns
+ */
+//TODO Not a `unique` function as multiple can have the same category so it should return them all
+export function getClothingItemsByCategory(category) {
+	const foundItem = ClothingItemData.find((item) => item.category === category);
+	if (foundItem) {
+		return foundItem;
+	} else {
+		console.log('Could not find Clothing Item. Check id value.');
 		return null;
 	}
 }
