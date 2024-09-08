@@ -1,7 +1,13 @@
 <script>
-	/** @type {import('./$types').PageData} */
 	// export let data;
+	import ClothingItem from '$lib/components/ClothingItem.svelte';
+	import ClothingItemData from '/home/awaisamjad/code/web/ouafi/src/data/ClothingItemData.json';
 </script>
+
+<!-- ? Display all the clothing items -->
+<!-- {#each ClothingItemData as item}
+	<ClothingItem id={item.id} name={item.name} price={item.price} image={item.image} />
+{/each} -->
 
 <div class="w-96 flex items-center justify-center flex-col">
 	<div class="flex items-center justify-center w-full">
@@ -70,8 +76,10 @@
 	</form>
 </div>
 
+
+
 <style>
-    /* Removes the arrow from the number input */
+	/* Removes the arrow from the number input */
 	/* Chrome, Safari, Edge, Opera */
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {

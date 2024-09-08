@@ -5,7 +5,7 @@
   
   function authenticate() {
     if (username == "Awais" && password == "Amjad"){
-      goto('/cms')
+      goto('/admin/dashboard')
     }
     else{
       alert("Unsuccessful")

@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
-	import { getClothingItemByID } from '$lib/utils';
+	import { getClothingItemByID, getClothingItemByName } from '$lib/utils';
 	const clothing_item_name = $page.params.ClothingItemName;
-	let information = getClothingItemByID(Number(clothing_item_name));
+	// let information = getClothingItemByID(Number(clothing_item_name));
+    let information = getClothingItemByName(clothing_item_name);
 	let id = information?.id;
 	let name = information?.name;
 	let category = information?.category;
@@ -29,6 +30,9 @@
 					<p class="text-lg font-medium leading-8 text-indigo-600 mb-4">
 						Clothing&nbsp; /&nbsp; Menswear
 					</p>
+                    <button>
+                        Write to file
+                    </button>
 					<p class="text-lg font-medium leading-8 text-indigo-600 mb-4">
 						{category}&nbsp; /&nbsp; {gender}
 					</p>

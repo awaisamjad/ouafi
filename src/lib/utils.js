@@ -1,22 +1,17 @@
+// @ts-nocheck
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { cubicOut } from 'svelte/easing';
 import ClothingItemData from '../data/ClothingItemData.json';
 
-// @ts-ignore
 export function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
 
-export const flyAndScale = (
-	// @ts-ignore
-	node,
-	params = { y: -8, x: 0, start: 0.95, duration: 150 }
-) => {
+export const flyAndScale = (node, params = { y: -8, x: 0, start: 0.95, duration: 150 }) => {
 	const style = getComputedStyle(node);
 	const transform = style.transform === 'none' ? '' : style.transform;
 
-	// @ts-ignore
 	const scaleConversion = (valueA, scaleA, scaleB) => {
 		const [minA, maxA] = scaleA;
 		const [minB, maxB] = scaleB;
@@ -27,7 +22,6 @@ export const flyAndScale = (
 		return valueB;
 	};
 
-	// @ts-ignore
 	const styleToString = (style) => {
 		return Object.keys(style).reduce((str, key) => {
 			if (style[key] === undefined) return str;
@@ -38,7 +32,6 @@ export const flyAndScale = (
 	return {
 		duration: params.duration ?? 200,
 		delay: 0,
-		// @ts-ignore
 		css: (t) => {
 			const y = scaleConversion(t, [0, 1], [params.y ?? 5, 0]);
 			const x = scaleConversion(t, [0, 1], [params.x ?? 0, 0]);
@@ -53,11 +46,10 @@ export const flyAndScale = (
 	};
 };
 
-// @ts-ignore
 /**
- * 
- * @param {number} id 
- * @returns 
+ *
+ * @param {number} id
+ * @returns
  */
 export function getClothingItemByID(id) {
 	const foundItem = ClothingItemData.find((item) => item.id === id);
@@ -69,7 +61,6 @@ export function getClothingItemByID(id) {
 	}
 }
 
-// @ts-ignore
 /**
  *
  * @param {string} name
@@ -85,7 +76,6 @@ export function getClothingItemByName(name) {
 	}
 }
 
-// @ts-ignore
 /**
  *
  * @param {string} image
@@ -101,7 +91,6 @@ export function getClothingItemByImage(image) {
 	}
 }
 
-// @ts-ignore
 /**
  *
  * @param {number} price
@@ -118,7 +107,6 @@ export function getClothingItemsByPrice(price) {
 	}
 }
 
-// @ts-ignore
 /**
  *
  * @param {string} gender
@@ -135,7 +123,6 @@ export function getClothingItemsByGender(gender) {
 	}
 }
 
-// @ts-ignore
 /**
  *
  * @param {string} category
@@ -151,3 +138,16 @@ export function getClothingItemsByCategory(category) {
 		return null;
 	}
 }
+
+/**
+ * @param {string} filepath
+ * @param {string} data
+ */
+
+// export function writeClothingItemDataToFile(filepath, data) {
+// 	fs.appendFileSync(filepath, data, (err) => {
+// 		if (err) {
+// 			console.error(err);
+// 		}
+// 	});
+// }
