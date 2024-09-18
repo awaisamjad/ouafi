@@ -21,14 +21,14 @@
   
 > -->
 <a
-	class="w-64 h-80 rounded-md bg-slate-200 p-4 m-5
-        hover:bg-slate-300 hover:h-96"
+	class=" w-96 h-[450px] rounded-md bg-slate-200 p-4 m-5
+        hover:bg-slate-300 hover:h-[500px]"
         
 	href={`/${name}`}
   
 >
 <div class="">
-		<img src={image} alt={name} class="flex items-center justify-center" />
+		<img src={image} alt={name} class="" />
 		<div class="flex items-center justify-center flex-col">
 			<p class="text-lg font-semibold m-1">{name}</p>
 			<p class="text-m">£{price}</p>

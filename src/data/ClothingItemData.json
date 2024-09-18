@@ -22,7 +22,7 @@
 		"name" : "Big shirt",
 		"category" : "shirt",
 		"size" : "small",
-		"price" : 20,
+		"price" : 800,
 		"gender" : "male",
 		"image" : "shirt.jpg"
 	},
